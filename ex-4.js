@@ -8,15 +8,22 @@ const todos = [
 
 function getCompletedTodo(todos) {
   // Start coding here
+  const result = todos.reduce((prev, cur) => {
+    if (cur.completed) {
+      prev.push(cur)
+    }
+    return prev
+  }, [])
+  console.log(result)
 }
 
 getCompletedTodo(todos);
 
 /* 
-	Output:
-	[
-		{ topic: 'Doing pre-work', completed: true },
-	  { topic: 'Playing computer games', completed: true },
-	  { topic: 'Clean the room', completed: true }
-	]
+  Output:
+  [
+    { topic: 'Doing pre-work', completed: true },
+    { topic: 'Playing computer games', completed: true },
+    { topic: 'Clean the room', completed: true }
+  ]
 */
